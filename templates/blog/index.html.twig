@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+    <h1>Tous les articles : </h1>
+    {% for article in articles %}
+        <div class="jumbotron">
+            <h2 class="display-3">{{ article.title }}</h2>
+            <img src="{{ article.image }}" alt="">
+            <p class="lead">{{ article.createdAt | date('d/m/Y') }}</p>
+            <hr class="my-4">
+            <p>{{ article.content }}</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p>
+        </div>
+    {% endfor %}
+{% endblock %}
